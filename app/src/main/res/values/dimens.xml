@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="form_input_divider">16dp</dimen>
+    <dimen name="form_horizontal_padding">24dp</dimen>
+    <dimen name="list_item_padding">20dp</dimen>
+    <dimen name="list_item_divider">5dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_margin2">32dp</dimen>
+</resources>

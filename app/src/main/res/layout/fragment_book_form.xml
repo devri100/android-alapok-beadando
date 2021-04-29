@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="book"
+            type="hu.korsosrichard.demoapp.models.Book" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.book.AuthorFormFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/form_horizontal_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_input_divider"
+                android:text="@string/title" />
+
+            <EditText
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title"
+                android:inputType="textCapWords"
+                android:text="@{book.title}"
+                tools:ignore="Autofill" />
+
+            <TextView
+                android:id="@+id/error_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/MyTextAppearance.Error"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_input_divider"
+                android:labelFor="@id/author"
+                android:text="@string/author" />
+
+            <Spinner
+                android:id="@+id/author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/author"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/error_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/MyTextAppearance.Error"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_input_divider"
+                android:labelFor="@id/publication"
+                android:text="@string/year_of_publication" />
+
+            <EditText
+                android:id="@+id/publication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="4"
+                android:text="@{book.publication == 0 ? `` : String.valueOf(book.publication)}"
+                tools:ignore="Autofill" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_input_divider"
+                android:labelFor="@id/isbn"
+                android:text="@string/isbn" />
+
+            <EditText
+                android:id="@+id/isbn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="@{book.isbn}"
+                tools:ignore="Autofill" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_input_divider"
+                android:text="@string/description" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:hint="@string/write_some_description"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="5"
+                android:text="@{book.description}"
+                tools:ignore="Autofill" />
+
+            <!-- <Button
+                 android:id="@+id/button_save"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginVertical="@dimen/form_input_divider"
+                 android:text="@string/save" />-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
